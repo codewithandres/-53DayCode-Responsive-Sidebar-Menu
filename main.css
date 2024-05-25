@@ -15,6 +15,7 @@
 body {
     min-height: 100vh;
     background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    padding-left: 10em;
 }
 
 .sidebar {
@@ -30,26 +31,20 @@ body {
     display: flex;
     flex-direction: column;
 
-    &:hover {
+    &.active {
         width: 260px;
     }
 
-    &:hover .sidebar-links h4 span {
+    &.active .sidebar-links h4 span {
         opacity: 1;
         transition: 200ms ease;
     }
 
-    &:hover .sidebar-links .menu-separaor {
+    &.active .sidebar-links .menu-separaor {
         transform: scaleX(0);
         transition-delay: 0s;
     }
 
-    /*
-    &:hover .user-profile {
-        background-color: hwb(60 98% 0% / 0.176);
-        border-radius: .3em;
-        padding: 1em;
-    }*/
 }
 
 .sidebar-header {
@@ -57,9 +52,14 @@ body {
     align-items: center;
 }
 
-.sidebar-header img {
-    width: 40px;
+.sidebar-header .icon-menu {
+    color: hwb(213 87% 8%);
     border-radius: 50%;
+    font-size: 1.5em;
+    margin-left: .6em;
+    cursor: pointer;
+    border-radius: .4em;
+
 }
 
 .sidebar-header h2 {
@@ -105,6 +105,10 @@ body {
     opacity: 0;
 }
 
+.sidebar-links li a i {
+    color: hwb(240 25% 52%);
+}
+
 .sidebar-links li a {
     gap: 0 1em;
     display: flex;
@@ -112,7 +116,7 @@ body {
 
     padding: .5em .7em;
     text-decoration: none;
-    color: hwb(213 87% 8%);
+    color: hwb(212 87% 8% / 0.658);
     transition: all 200ms ease;
 
     &:hover {
@@ -120,6 +124,11 @@ body {
         border-radius: .3em;
         background-color: hwb(0 100% 0% / 0.176);
 
+    }
+
+    &:hover i {
+        color: hwb(241 44% 17%);
+        transition: 200ms ease;
     }
 }
 
