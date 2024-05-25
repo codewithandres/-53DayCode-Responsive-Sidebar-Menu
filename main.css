@@ -12,11 +12,150 @@
     font-style: normal;
 }
 
-body{
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1.5em 1.3em;
+    width: 85px;
+    background-color: hwb(230 9% 82%);
+    overflow: hidden;
+    transition: width 300ms cubic-bezier(0, -0.11, .01, .98);
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        width: 260px;
+    }
+
+    &:hover .sidebar-links h4 span {
+        opacity: 1;
+        transition: 200ms ease;
+    }
+
+    &:hover .sidebar-links .menu-separaor {
+        transform: scaleX(0);
+        transition-delay: 0s;
+    }
+
+    /*
+    &:hover .user-profile {
+        background-color: hwb(60 98% 0% / 0.176);
+        border-radius: .3em;
+        padding: 1em;
+    }*/
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
 }
 
 .sidebar-header img {
     width: 40px;
     border-radius: 50%;
+}
+
+.sidebar-header h2 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: hwb(228 95% 4%);
+    margin-left: 1.3em;
+    white-space: nowrap;
+}
+
+.sidebar-links {
+    list-style: none;
+    margin-top: 20px;
+    height: 80%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.sidebar-links h4 {
+    font-size: 1.25em;
+    color: hwb(228 95% 4%);
+    font-size: 1em;
+    font-weight: 500;
+    white-space: nowrap;
+    margin: 1em 0;
+    position: relative;
+}
+
+.sidebar-links .menu-separaor {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(1);
+    transform: translateY(-50%);
+    background-color: hwb(238 20% 53%);
+    transform-origin: right;
+    transition-delay: 0.25s;
+}
+
+.sidebar-links h4 span {
+    opacity: 0;
+}
+
+.sidebar-links li a {
+    gap: 0 1em;
+    display: flex;
+    align-items: center;
+
+    padding: .5em .7em;
+    text-decoration: none;
+    color: hwb(213 87% 8%);
+    transition: all 200ms ease;
+
+    &:hover {
+        color: hwb(228 95% 4%);
+        border-radius: .3em;
+        background-color: hwb(0 100% 0% / 0.176);
+
+    }
+}
+
+.user-account {
+    margin-top: auto;
+    padding: .5em .6em;
+    margin-left: -.6em;
+
+}
+
+.user-account .user-profile {
+    color: hwb(228 95% 4%);
+    align-items: center;
+    display: flex;
+    gap: 0 1em;
+}
+
+.user-profile img {
+    min-width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-details {
+    margin-left: 1em;
+    white-space: nowrap;
+}
+
+.user-profile h3 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.user-profile span {
+    font-size: 0.775em;
+    display: block;
+    margin-top: 0;
 }
